@@ -3,7 +3,7 @@ import { useCreateProjectMutation } from "../../redux/services/project/projectAp
 import "react-quill/dist/quill.snow.css";
 import ReactQuill from "react-quill";
 import { toast } from "sonner";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Create = () => {
   const [project, setProject] = useState({

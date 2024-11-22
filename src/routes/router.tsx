@@ -10,6 +10,7 @@ import Blog from "../pages/Blog";
 import Create from "../pages/projects/Create";
 import Login from "../pages/auth/Login";
 import CreateSkills from "../pages/skills/CreateSkills";
+import CreateBlog from "../pages/blog/CreateBlog";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "skills/create",
         element: <CreateSkills />,
+      },
+      {
+        path: "blog/create",
+        element: <CreateBlog />,
       },
       {
         path: "*",
