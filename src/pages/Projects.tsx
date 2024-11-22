@@ -5,6 +5,7 @@ import {
 } from "../redux/services/project/projectApi";
 import { EyeOutlined, DeleteOutlined, GithubOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
+import { toast } from "sonner";
 
 const Projects = () => {
   const columns = [
@@ -101,8 +102,9 @@ const Projects = () => {
   const { data: projects, isFetching } = useGetAllProjectsQuery("");
   const [deleteProject] = useDeleteProjectbyIdMutation();
 
-  const handleDelete = (id: string) => {
-    deleteProject(id);
+  const handleDelete = async (id: string) => {
+    const res = await deleteProject(id).unwrap();
+    toast.success(res.message);
   };
 
   return (

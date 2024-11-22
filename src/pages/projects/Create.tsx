@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useCreateProjectMutation } from "../../redux/services/project/projectApi";
 import "react-quill/dist/quill.snow.css";
 import ReactQuill from "react-quill";
+import { toast } from "sonner";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Create = () => {
   const [project, setProject] = useState({
@@ -51,9 +53,17 @@ const Create = () => {
   };
 
   const [createProject] = useCreateProjectMutation();
-  const handleSubmit = (e: any) => {
+
+  const navigate = useNavigate();
+  const handleSubmit =async (e: any) => {
     e.preventDefault();
-    createProject(project);
+    try {
+      const res = await createProject(project).unwrap();
+      toast.success(res?.message);
+      navigate("/projects", { replace: true });
+    } catch (error:any) {
+      toast.error(error?.data?.errors[0]?.message);
+    }
   };
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
