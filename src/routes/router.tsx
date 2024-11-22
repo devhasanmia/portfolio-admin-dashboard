@@ -9,6 +9,7 @@ import Skills from "../pages/Skills";
 import Blog from "../pages/Blog";
 import Create from "../pages/projects/Create";
 import Login from "../pages/auth/Login";
+import CreateSkills from "../pages/skills/CreateSkills";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -16,15 +17,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <Dashboard />
+        element: <Dashboard />,
       },
       {
         path: "dashboard",
-        element: <Dashboard />
+        element: <Dashboard />,
       },
       {
         path: "messages",
-        element: <Messages />
+        element: <Messages />,
       },
       {
         path: "projects",
@@ -32,31 +33,34 @@ const router = createBrowserRouter([
       },
       {
         path: "projects/create",
-        element: <Create/>
+        element: <Create />,
       },
       {
         path: "blog",
-        element: <Blog/>
+        element: <Blog />,
       },
       {
         path: "skills",
-        element: <Skills/>
+        element: <Skills />,
       },
       {
         path: "settings",
-        element: <Settings/>
+        element: <Settings />,
+      },
+      {
+        path: "skills/create",
+        element: <CreateSkills />,
       },
       {
         path: "*",
-        element: <NotFound/>
-      }
-      
-    ]
+        element: <NotFound />,
+      },
+    ],
   },
   {
     path: "/login",
-    element: <Login/>
-  }
+    element: <Login />,
+  },
 ]);
 
 export default router;
