@@ -7,6 +7,7 @@ import Settings from "../pages/Settings";
 import NotFound from "../errors/NotFound";
 import Skills from "../pages/Skills";
 import Blog from "../pages/Blog";
+import Create from "../pages/projects/Create";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,7 +27,11 @@ const router = createBrowserRouter([
       },
       {
         path: "projects",
-        element: <Projects />
+        element: <Projects />,
+      },
+      {
+        path: "projects/create",
+        element: <Create/>
       },
       {
         path: "blog",
