@@ -1,6 +1,8 @@
 import { Layout, Menu } from "antd";
+import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { LuLayoutDashboard } from "react-icons/lu";
-import { MdMessage } from "react-icons/md";
+import { GiSkills,GiNotebook } from "react-icons/gi";
+import { MdMessage, MdOutlineSettingsSuggest } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 const { Sider } = Layout;
 const items = [
@@ -15,8 +17,24 @@ const items = [
     label: <NavLink to={"/messages"}>Messages</NavLink>,
   },
   {
-    key: "something",
-    label: "Something",
+    key: "projects",
+    icon: <AiOutlineFundProjectionScreen />,
+    label: <NavLink to={"/projects"}>Projects</NavLink>,
+  },
+  {
+    key: "blog",
+    icon: <GiNotebook />,
+    label: <NavLink to={"/blog"}>Blog</NavLink>,
+  },
+  {
+    key: "skills",
+    icon: <GiSkills />,
+    label: <NavLink to={"/skills"}>Skills</NavLink>,
+  },
+  {
+    key: "settings",
+    icon: <MdOutlineSettingsSuggest />,
+    label: <NavLink to={"/settings"}>Settings</NavLink>,
   },
 ];
 

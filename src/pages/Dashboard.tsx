@@ -8,9 +8,6 @@ const Dashboard = () => {
     <div>
       <header className="mb-8">
         <h1 className="text-4xl font-extrabold text-gray-800">Dashboard</h1>
-        <p className="text-lg text-gray-600">
-          Overview of your performance and stats
-        </p>
       </header>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         <InfoBox
