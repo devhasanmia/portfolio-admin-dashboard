@@ -2,8 +2,12 @@ import { FiEdit } from "react-icons/fi";
 import InfoBox from "../components/InfoBox/InfoBox";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { MdMessage } from "react-icons/md";
+import { useGetAllBlogQuery } from "../redux/services/blog/BlogApi";
+import { useGetAllProjectsQuery } from "../redux/services/project/projectApi";
 
 const Dashboard = () => {
+  const { data: blog } = useGetAllBlogQuery("");
+  const { data: projects } = useGetAllProjectsQuery("");
   return (
     <div>
       <header className="mb-8">
@@ -12,14 +16,14 @@ const Dashboard = () => {
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         <InfoBox
           title="Total Blog"
-          shortDec="25"
+          shortDec={blog?.data?.length}
           shortMsg="Updated Data"
           icon={<FiEdit />}
           classes="bg-green-500"
         />
         <InfoBox
           title="Total Projects"
-          shortDec="125"
+          shortDec={projects?.data?.length}
           shortMsg="Updated Data"
           icon={<AiOutlineFundProjectionScreen />}
           classes="bg-blue-500"
@@ -27,7 +31,7 @@ const Dashboard = () => {
         <InfoBox
           title="New Messages"
           icon={<MdMessage />}
-          shortDec="45"
+          shortDec="0"
           shortMsg="Unread Message"
           classes="bg-red-400"
         />

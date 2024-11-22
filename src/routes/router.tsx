@@ -8,6 +8,7 @@ import NotFound from "../errors/NotFound";
 import Skills from "../pages/Skills";
 import Blog from "../pages/Blog";
 import Create from "../pages/projects/Create";
+import Login from "../pages/auth/Login";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       }
       
     ]
+  },
+  {
+    path: "/login",
+    element: <Login/>
   }
 ]);
 

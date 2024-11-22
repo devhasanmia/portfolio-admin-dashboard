@@ -1,7 +1,7 @@
 import { Layout, Menu } from "antd";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { LuLayoutDashboard } from "react-icons/lu";
-import { GiSkills,GiNotebook } from "react-icons/gi";
+import { GiSkills, GiNotebook } from "react-icons/gi";
 import { MdMessage, MdOutlineSettingsSuggest } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 const { Sider } = Layout;
@@ -10,11 +10,6 @@ const items = [
     key: "dashboard",
     icon: <LuLayoutDashboard />,
     label: <NavLink to={"/dashboard"}>Dashboard</NavLink>,
-  },
-  {
-    key: "Messages",
-    icon: <MdMessage />,
-    label: <NavLink to={"/messages"}>Messages</NavLink>,
   },
   {
     key: "projects",
@@ -32,12 +27,16 @@ const items = [
     label: <NavLink to={"/skills"}>Skills</NavLink>,
   },
   {
+    key: "Messages",
+    icon: <MdMessage />,
+    label: <NavLink to={"/messages"}>Messages</NavLink>,
+  },
+  {
     key: "settings",
     icon: <MdOutlineSettingsSuggest />,
     label: <NavLink to={"/settings"}>Settings</NavLink>,
   },
 ];
-
 
 const Sidebar = ({ collapsed }: { collapsed: boolean }) => {
   return (
@@ -57,9 +56,7 @@ const Sidebar = ({ collapsed }: { collapsed: boolean }) => {
           fontWeight: "bold",
         }}
       >
-        {
-          collapsed? "Admin" : "Admin Panel"
-        }
+        {collapsed ? "Admin" : "Admin Panel"}
       </div>
       <Menu
         theme="dark"
